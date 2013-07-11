@@ -1,10 +1,12 @@
 var express = require('express');
 var app = express.createServer(express.logger());
-var fileTextBuf = new Buffer(8);
-fileTextBuf = fs.readFileSync('index.html');
-var fileText= buf.toString();
+// var fileTextBuf = new Buffer(8);
+// fileTextBuf = fs.readFileSync('index.html');
+// var fileText= buf.toString();
 app.get('/', function(request, response) {
-  response.send(fileText);
+var fs = require('fs');
+var buffer = new buffer();  
+response.send(buffer.toString('utc 8',fs.readFileSync("index.html")));
 });
 
 var port = process.env.PORT || 5000;
